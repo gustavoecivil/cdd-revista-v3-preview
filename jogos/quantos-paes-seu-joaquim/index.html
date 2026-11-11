@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Quantos Pães, Seu Joaquim? — Cultura Data-Driven</title>
+  <meta name="description" content="Um experimento rápido sobre previsão, valor esperado e decisões sob incerteza.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#0B0B0B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/cdd-revista-v3-preview/assets/css/site.css">
+  <link rel="stylesheet" href="./game.css">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow,noarchive">
+<style>.cdd-preview-ribbon{position:fixed;z-index:999999;right:12px;bottom:12px;background:#0b0b0b;color:#f7f5ee;border:1px solid #b88b4f;border-radius:5px;padding:9px 12px;font:700 11px/1.3 Arial,sans-serif;letter-spacing:.07em;box-shadow:0 6px 20px #0003}</style></head>
+<body class="joaquim-body">
+<div class="cdd-preview-ribbon" aria-label="Ambiente de testes">PRÉVIA V3 · GITHUB PAGES</div>
+  <main class="game-shell" id="app" aria-live="polite">
+
+    <section class="screen intro-screen" id="intro">
+      <div class="intro-art">
+        <img src="./joaquim.svg" alt="Caricatura do Seu Joaquim, dono de uma padaria">
+      </div>
+      <div class="intro-copy">
+        <div class="brandline">Cultura Data-Driven · Laboratório de decisão</div>
+        <h1>Quantos pães,<br><span>Seu Joaquim?</span></h1>
+        <p>Quatro rodadas. Uns dois minutos. Você decide antes de saber o que vai acontecer.</p>
+        <div class="intro-note">Você não precisa vender pão. O problema aqui é decidir sob incerteza.</div>
+        <button class="cta" id="startBtn">Jogar agora 🍞</button>
+      </div>
+    </section>
+
+    <section class="screen game-screen hidden" id="gamePanel">
+      <header class="topbar">
+        <div>
+          <div class="step-label">Fase <b id="phaseNo">1</b> de 4</div>
+          <h2 id="phaseTitle">Vai no feeling</h2>
+        </div>
+        <div class="profit-mini">
+          <span>Lucro</span>
+          <strong id="totalProfit">R$ 0</strong>
+        </div>
+      </header>
+
+      <div class="progress"><i id="progressBar"></i></div>
+
+      <div class="character-strip">
+        <img src="./joaquim.svg" alt="" aria-hidden="true">
+        <div class="speech" id="joaquimSpeech">“Ora pois... quantos pães eu faço hoje?”</div>
+      </div>
+
+      <div class="context-chips" id="contextChips"></div>
+      <div class="data-card" id="dataCard"></div>
+      <div class="campaign-card hidden" id="campaignBlock"></div>
+
+      <div class="decision-block">
+        <label for="qty">Quantos pães você faria?</label>
+        <div class="quantity">
+          <button class="qty-btn" type="button" data-delta="-10" aria-label="Diminuir 10 pães">−</button>
+          <div class="qty-center">
+            <strong id="qtyValue">420</strong>
+            <span>pães</span>
+          </div>
+          <button class="qty-btn" type="button" data-delta="10" aria-label="Aumentar 10 pães">+</button>
+        </div>
+        <input id="qty" class="range" type="range" min="250" max="650" step="10" value="420">
+        <button class="cta full" id="bakeBtn">Assar 🍞</button>
+      </div>
+    </section>
+
+    <section class="screen result-screen hidden" id="resultPanel">
+      <div class="reaction" id="resultEmoji">🎯</div>
+      <div class="step-label">Resultado da rodada</div>
+      <h2 id="resultTitle">O dia acabou.</h2>
+      <div class="metrics" id="metrics"></div>
+      <div class="lesson" id="lesson"></div>
+      <button class="cta full" id="nextBtn">Próxima fase →</button>
+    </section>
+
+    <section class="screen final-screen hidden" id="finalPanel">
+      <div class="final-art"><img src="./joaquim.svg" alt="" aria-hidden="true"></div>
+      <div class="step-label">Fim do experimento</div>
+      <h2 id="finalRank">Mestre do Forno</h2>
+      <p class="final-score" id="finalScore"></p>
+
+      <blockquote>O pão é fictício. O problema não é.</blockquote>
+
+      <p class="bridge">Em outro negócio, a pergunta pode ser: quanto estocar, que preço cobrar, qual horário reforçar, que campanha vale a pena ou onde existe uma venda que você nem percebeu que perdeu.</p>
+
+      <div class="examples">
+        <span>estoque</span><span>preço</span><span>demanda</span><span>capacidade</span><span>marketing</span>
+      </div>
+
+      <div class="gsa-box">
+        <strong>GSA — Inteligência para Decisão</strong>
+        <p>Dados reais. Contexto real. Decisões melhores.</p>
+        <a class="cta link" href="https://taggo.one/gustavosantosanalytics" target="_blank" rel="noopener">Quero entender meus dados</a>
+      </div>
+
+      <button class="secondary" id="restartBtn">Jogar de novo</button>
+    </section>
+
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

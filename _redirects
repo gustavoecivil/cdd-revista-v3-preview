@@ -1,0 +1,40 @@
+# Gerado por scripts/revista/build.mjs — não editar à mão. Fonte: content/redirects.txt + campos "moved" dos textos.
+# Redirecionamentos mantidos à mão. Formato Netlify: origem  destino  status
+# Netlify trata /caminho e /caminho/ como equivalentes.
+
+# Estrutura /pt/ nunca foi a oficial: o português fica na raiz.
+/pt  /  301
+/pt/*  /:splat  301
+
+# Rascunho retirado do ar em 04/11/2026 (estava público com nota interna de revisão).
+# 302 = temporário: quando o texto for aprovado e publicado, remova a linha.
+/blog/a-pergunta-vem-antes-do-grafico  /blog/  302
+/en/blog/a-pergunta-vem-antes-do-grafico  /en/blog/  302
+/es/blog/a-pergunta-vem-antes-do-grafico  /es/blog/  302
+
+# O jogo do laboratório vive em /jogos/<nome>/; a pasta raiz não tem índice.
+/jogos  /laboratorio/  301
+/en/jogos/*  /jogos/:splat  301
+/es/jogos/*  /jogos/:splat  301
+
+# Endereço antigo do feed
+/feed  /feed.xml  301
+/feed/  /feed.xml  301
+
+# Textos que mudaram de seção (URLs antigas, 301 permanente)
+/blog/eu-odeio-aqueles-meninos-do-coreto  /cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/blog/eu-odeio-aqueles-meninos-do-coreto/  /cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/en/blog/eu-odeio-aqueles-meninos-do-coreto  /en/cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/en/blog/eu-odeio-aqueles-meninos-do-coreto/  /en/cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/es/blog/eu-odeio-aqueles-meninos-do-coreto  /es/cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/es/blog/eu-odeio-aqueles-meninos-do-coreto/  /es/cronicas/eu-odeio-aqueles-meninos-do-coreto/  301
+/blog/o-guiche-da-liberdade  /cronicas/o-guiche-da-liberdade/  301
+/blog/o-guiche-da-liberdade/  /cronicas/o-guiche-da-liberdade/  301
+/en/blog/o-guiche-da-liberdade  /en/cronicas/o-guiche-da-liberdade/  301
+/en/blog/o-guiche-da-liberdade/  /en/cronicas/o-guiche-da-liberdade/  301
+/es/blog/o-guiche-da-liberdade  /es/cronicas/o-guiche-da-liberdade/  301
+/es/blog/o-guiche-da-liberdade/  /es/cronicas/o-guiche-da-liberdade/  301
+
+# Páginas 404 por idioma
+/en/*  /en/404.html  404
+/es/*  /es/404.html  404
